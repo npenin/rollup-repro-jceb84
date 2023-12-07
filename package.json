@@ -3,15 +3,21 @@
   "type": "module",
   "version": "0.0.0",
   "scripts": {
-    "build": "rollup -c rollup.config.js",
-    "exec:dev": "node src/main.js ",
-    "exec:build": "node dist/main.js"
+    "build": "rollup -c package-main/rollup.config.js",
+    "exec:dev": "node package-main/src/main.js ",
+    "exec:build": "node package-main/dist/main.js"
   },
+  "private":true,
+  "workspaces":[
+    "package-main",
+    "package1"
+  ],
   "devDependencies": {
     "rollup": "^4.6.1",
     "@rollup/plugin-commonjs": "^25.0.7",
     "@rollup/plugin-node-resolve": "^15.2.3",
-    "@rollup/plugin-typescript": "^11.1.5"
+    "@rollup/plugin-typescript": "^11.1.5",
+    "tslib": "2.6.2"
   },
   "stackblitz": {
     "startCommand": "npm run build"
