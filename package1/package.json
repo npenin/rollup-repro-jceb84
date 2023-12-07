@@ -1,0 +1,25 @@
+{
+  "name": "rollup-repro-dep1",
+  "type": "module",
+  "version": "0.0.0",
+  "source": "src/index.ts",
+  "exports": {
+    ".": {
+      "ts": "./src/a.ts",
+      "import": {
+        "types": "./dist/a.d.ts",
+        "default": "./dist/a.js"
+      }
+    },
+    "./*.js": {
+      "ts": "./src/*.ts"
+    }
+  },
+  "scripts": {},
+  "stackblitz": {
+    "startCommand": "npm run build"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  }
+}
